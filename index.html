@@ -1,0 +1,124 @@
+<script>
+    function Playnumber(number) {
+        var zero = new Audio('0.wav');
+        var one = new Audio('1.wav');
+        var two = new Audio('2.wav');
+        var three = new Audio('3.wav');
+        var four = new Audio('4.wav');
+        var five = new Audio('5.wav');
+        var six = new Audio('6.wav');
+        var seven = new Audio('7.wav');
+        var eight = new Audio('8.wav');
+        var nine = new Audio('9.wav');
+        var first = new Audio('First.wav');
+        var last = new Audio('Last.wav');
+        switch (number) {
+            case 0:
+                zero.play();
+                break;
+            case 1:
+                one.play();
+                break;
+            case 2:
+                two.play();
+                break;
+            case 3:
+                three.play();
+                break;
+            case 4:
+                four.play();
+                break;
+            case 5:
+                five.play();
+                break;
+            case 6:
+                six.play();
+                break;
+            case 7:
+                seven.play();
+                break;
+            case 8:
+                eight.play();
+                break;
+            case 9:
+                nine.play();
+                break;
+            case 20:
+                first.play();
+                break;
+            case 21:
+                last.play();
+                break;
+        }
+    }
+
+    function reverseint(num) {
+        var multiplier = 100000;
+        var oldnum = 0;
+        var reversenum;
+
+        do {
+            reversenum = ((num % 10) * multiplier) + oldnum;
+            num = parseInt(num / 10);
+            multiplier = parseInt(multiplier / 10);
+            oldnum = reversenum;
+
+            console.log(reversenum);
+            console.log(num);
+            console.log(multiplier);
+
+        } while (num > 0);
+
+        return reversenum
+    }
+
+    main = function () {
+        var number = parseInt(prompt("Enter your PAP Number", "123456"), 10);
+        var delayInMilliseconds = 1000;
+        var newnumber = reverseint(number);
+        var playnum;
+
+        setTimeout(function () {
+            
+            Playnumber(20);
+            
+            setTimeout(function () {
+                playnum = newnumber % 10;
+                Playnumber(playnum);
+                newnumber = parseInt(newnumber / 10);
+                setTimeout(function () {
+                    playnum = newnumber % 10;
+                    Playnumber(playnum);
+                    newnumber = parseInt(newnumber / 10);
+                    setTimeout(function () {
+                        playnum = newnumber % 10;
+                        Playnumber(playnum);
+                        newnumber = parseInt(newnumber / 10);
+                        setTimeout(function () {
+                            playnum = newnumber % 10;
+                            Playnumber(playnum);
+                            newnumber = parseInt(newnumber / 10);
+                            setTimeout(function () {
+                                playnum = newnumber % 10;
+                                Playnumber(playnum);
+                                newnumber = parseInt(newnumber / 10);
+                                setTimeout(function () {
+                                    playnum = newnumber % 10;
+                                    Playnumber(playnum);
+                                    newnumber = parseInt(newnumber / 10);
+                                    setTimeout(function () {
+                                        
+                                        Playnumber(21);
+                                        
+                                    }, 1000);
+                                }, delayInMilliseconds);
+                            }, delayInMilliseconds);
+                        }, delayInMilliseconds);
+                    }, delayInMilliseconds);
+                }, delayInMilliseconds);
+            }, 2500);
+        }, 100);
+
+    }
+</script>
+<button onclick='main()'>PLAY </button>

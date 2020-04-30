@@ -92,14 +92,12 @@
         var newnumber = reverseint(number);
         var playnum;
 
-        setTimeout(function () {
-
-            Playnumber(20);
+        if (number) {
 
             setTimeout(function () {
-                playnum = newnumber % 10;
-                Playnumber(playnum);
-                newnumber = parseInt(newnumber / 10);
+
+                Playnumber(20);
+
                 setTimeout(function () {
                     playnum = newnumber % 10;
                     Playnumber(playnum);
@@ -121,18 +119,23 @@
                                     Playnumber(playnum);
                                     newnumber = parseInt(newnumber / 10);
                                     setTimeout(function () {
+                                        playnum = newnumber % 10;
+                                        Playnumber(playnum);
+                                        newnumber = parseInt(newnumber / 10);
+                                        setTimeout(function () {
 
-                                        Playnumber(21);
+                                            Playnumber(21);
 
-                                    }, 1000);
+                                        }, 1000);
+                                    }, delayInMilliseconds);
                                 }, delayInMilliseconds);
                             }, delayInMilliseconds);
                         }, delayInMilliseconds);
                     }, delayInMilliseconds);
-                }, delayInMilliseconds);
-            }, 2500);
-        }, 100);
+                }, 2500);
+            }, 100);
 
+        }
     }
 </script>
 <button onclick='main()'>PAP Number </button>

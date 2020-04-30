@@ -13,18 +13,7 @@
     var first = new Audio('First.wav');
     var last = new Audio('Last.wav');
     function Playnumber(number) {
-        var zero = new Audio('0.wav');
-        var one = new Audio('1.wav');
-        var two = new Audio('2.wav');
-        var three = new Audio('3.wav');
-        var four = new Audio('4.wav');
-        var five = new Audio('5.wav');
-        var six = new Audio('6.wav');
-        var seven = new Audio('7.wav');
-        var eight = new Audio('8.wav');
-        var nine = new Audio('9.wav');
-        var first = new Audio('First.wav');
-        var last = new Audio('Last.wav');
+
 
         switch (number) {
             case 0:
@@ -88,7 +77,7 @@
 
     main = function () {
         var number = parseInt(prompt("Please enter your PAP Number", "641041"), 10);
-        var delayInMilliseconds = 1000;
+        var delayInMilliseconds = 1100;
         var newnumber = reverseint(number);
         var playnum;
 

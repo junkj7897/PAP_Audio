@@ -1,17 +1,20 @@
 <script>
+
+    var zero = new Audio('0.wav');
+    var one = new Audio('1.wav');
+    var two = new Audio('2.wav');
+    var three = new Audio('3.wav');
+    var four = new Audio('4.wav');
+    var five = new Audio('5.wav');
+    var six = new Audio('6.wav');
+    var seven = new Audio('7.wav');
+    var eight = new Audio('8.wav');
+    var nine = new Audio('9.wav');
+    var first = new Audio('First.wav');
+    var last = new Audio('Last.wav');
+
     function Playnumber(number) {
-        var zero = new Audio('0.wav');
-        var one = new Audio('1.wav');
-        var two = new Audio('2.wav');
-        var three = new Audio('3.wav');
-        var four = new Audio('4.wav');
-        var five = new Audio('5.wav');
-        var six = new Audio('6.wav');
-        var seven = new Audio('7.wav');
-        var eight = new Audio('8.wav');
-        var nine = new Audio('9.wav');
-        var first = new Audio('First.wav');
-        var last = new Audio('Last.wav');
+
         switch (number) {
             case 0:
                 zero.play();
@@ -78,10 +81,14 @@
         var newnumber = reverseint(number);
         var playnum;
 
-        
-            
-            Playnumber(20);
-            
+
+
+        Playnumber(20);
+
+        setTimeout(function () {
+            playnum = newnumber % 10;
+            Playnumber(playnum);
+            newnumber = parseInt(newnumber / 10);
             setTimeout(function () {
                 playnum = newnumber % 10;
                 Playnumber(playnum);
@@ -103,21 +110,17 @@
                                 Playnumber(playnum);
                                 newnumber = parseInt(newnumber / 10);
                                 setTimeout(function () {
-                                    playnum = newnumber % 10;
-                                    Playnumber(playnum);
-                                    newnumber = parseInt(newnumber / 10);
-                                    setTimeout(function () {
-                                        
-                                        Playnumber(21);
-                                        
-                                    }, 1000);
-                                }, delayInMilliseconds);
+
+                                    Playnumber(21);
+
+                                }, 1000);
                             }, delayInMilliseconds);
                         }, delayInMilliseconds);
                     }, delayInMilliseconds);
                 }, delayInMilliseconds);
-            }, 2500);
-        
+            }, delayInMilliseconds);
+        }, 2500);
+
 
     }
 
